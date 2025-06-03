@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_pf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 19:58:05 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/02 20:13:38 by sgomez-m         ###   ########.fr       */
+/*   Created: 2025/06/04 00:02:11 by sgomez-m          #+#    #+#             */
+/*   Updated: 2025/06/04 00:44:38 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "lib_printf"
 
-int	ft_printf(char const *, ...)
+void	ft_putnbr_pf(int n, int *len)
 {
-	if (!*)
-		return (NULL);
-	while (*)
+	long	nbr;
+	int	sing;
+
+	nbr = n;
+	if (nbr < 0)
 	{
-		if (* == '%')
-		{
-			if (* + 1 == 'c' || * + 1 == '%')
-			else if (* + 1 == 's')
-			else if (* + 1 == 'p')
-			else if (* + 1 == 'd' || * + 1 == 'i')
-			else if (* + 1 == 'u')
-			else if (* + 1 == 'x' || * + 1 == 'X')
-		}
-		else
-			ft_putchar(*);
-		*++;
+		nbr *= -1;
+		write(1, '-', 1);
 	}
-	return (1);
+	if (nbr >= 10 )
+	{
+		ft_putnbr((nbr / 10), *len++);
+	}
+	ft_putchar_pf(((nbr % 10) + '0'), *len);
 }
