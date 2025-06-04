@@ -6,7 +6,7 @@
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:58:05 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/04 01:16:01 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:35:26 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_printf(char const *str, ...)
 			else if (str[i + 1] == 'd' || str[i + 1] == 'i')
 				ft_putnbr_pf(va_arg(args, int), &len);
 			else if (str[i + 1] == 'u')
-				ft_putnbr__pf((); //reutilizar la función ft_putnbr solo casteando a unsigned int
+				ft_putnbr__pf((unsigned int)va_args(args int), &len);
 			else if (str[i + 1] == 'x' || str[i + 1] == 'X')
 				ft_puthex_pf(va_args(args, int), &len);
 		}
