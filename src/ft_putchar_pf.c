@@ -6,14 +6,13 @@
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 23:53:06 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/03 23:54:32 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/06 19:27:47 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_printf"
 
-void	ft_putchar_pf(char c, *len)
+int	ft_putchar_pf(char c)
 {
-	write(1, &c, 1);
-	*len++;
+	return (write(1, &c, 1));
 }
