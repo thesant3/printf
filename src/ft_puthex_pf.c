@@ -6,7 +6,7 @@
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:52:11 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/04 22:35:15 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/12 22:20:43 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  ** Returns the amount of characters printing of the hex number.
  ** In case of fail returns 0.
  */
-#include "lib_printf.h"
+#include "ft_printf.h"
 
 int	ft_puthex_pf(unsigned long nbr, char cs)
 {

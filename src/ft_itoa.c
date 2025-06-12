@@ -6,11 +6,11 @@
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 18:24:44 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/05/14 18:52:52 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/12 22:16:55 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "ft_printf.h"
 
 static int	ft_num_len(int n, char **ptr)
 {

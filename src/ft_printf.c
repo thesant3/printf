@@ -6,11 +6,11 @@
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:58:05 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/06 20:13:57 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/12 23:43:00 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(char const *str, ...)
 {
@@ -24,11 +24,12 @@ int	ft_printf(char const *str, ...)
 	while (*ptr)
 	{
 		if (*ptr == '%' && (ptr + 1))
-			count += ft_handle_format((ptr++), args);
+			count += ft_handle_format((++ptr), args);
 		else
 		{
 			count += write(1, ptr, 1);
 		}
+		ptr++;
 	}
 	va_end(args);
 	return (count);

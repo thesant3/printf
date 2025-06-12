@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib_printf.h                                       :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 20:14:23 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/06 20:14:02 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/12 22:42:24 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_PRINTF_H
-# define LIB_PRINTF_H
-
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdint.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdint.h>
 
 int	ft_printf(char const *str, ...);
 int	ft_putchar_pf(char c);

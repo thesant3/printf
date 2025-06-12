@@ -6,11 +6,11 @@
 /*   By: sgomez-m <sgomez-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 04:03:49 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/12 04:04:08 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/12 22:20:22 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "ft_printf.h"
 
 int	ft_putdir_pf(void *pointer)
 {

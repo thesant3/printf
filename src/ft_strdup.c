@@ -6,11 +6,11 @@
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:50:39 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/05/10 19:19:26 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/12 22:22:01 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "ft_printf.h"
 
 /*
 **Duplicates the given string using malloc.

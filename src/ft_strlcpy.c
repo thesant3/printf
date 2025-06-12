@@ -6,11 +6,11 @@
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 20:15:53 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/05/10 22:45:12 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/12 22:22:22 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "ft_printf.h"
 
 size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {

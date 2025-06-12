@@ -6,11 +6,11 @@
 /*   By: sgomez-m <sgomez-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 22:33:44 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/11 22:56:58 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/12 22:23:04 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "ft_printf.h"
 
 char	*ft_utoa(unsigned long n, const char *base)
 {

@@ -6,11 +6,11 @@
 /*   By: sgomez-m <sgomez-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 22:39:50 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/11 22:56:51 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/12 22:18:12 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "ft_printf.h"
 
 int	ft_nbrlen(unsigned long n, int base_len)
 {

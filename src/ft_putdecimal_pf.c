@@ -6,11 +6,11 @@
 /*   By: sgomez-m <sgomez-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 00:19:25 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/12 00:19:29 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/12 22:19:53 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "ft_printf.h"
 
 int	ft_putdecimal_pf(long d)
 {
