@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 19:58:05 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/06 20:13:57 by sgomez-m         ###   ########.fr       */
+/*   Created: 2025/05/10 17:50:39 by sgomez-m          #+#    #+#             */
+/*   Updated: 2025/05/10 19:19:26 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_printf.h"
 
-int	ft_printf(char const *str, ...)
+/*
+**Duplicates the given string using malloc.
+**Parameters: const char *s - the string to duplicate
+**Returns: a pointer to the duplicated string,
+**or Null if memory allocation fails.
+*/
+char	*ft_strdup(const char *s)
 {
-	char	*ptr;
-	va_list	args;
-	int		count;
+	char	*new_string;
+	size_t	len;
 
-	va_start(args, str);
-	count = 0;
-	ptr = (char *)str;
-	while (*ptr)
-	{
-		if (*ptr == '%' && (ptr + 1))
-			count += ft_handle_format((ptr++), args);
-		else
-		{
-			count += write(1, ptr, 1);
-		}
-	}
-	va_end(args);
-	return (count);
+	if (!s)
+		return (NULL);
+	len = ft_strlen(s) + 1;
+	new_string = malloc(len);
+	if (!new_string)
+		return (NULL);
+	ft_strlcpy(new_string, (char *)s, len);
+	return (new_string);
 }

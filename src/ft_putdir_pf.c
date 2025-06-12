@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_pf.c                                     :+:      :+:    :+:   */
+/*   ft_putdir_pf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sgomez-m <sgomez-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 23:55:15 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/06 20:13:39 by sgomez-m         ###   ########.fr       */
+/*   Created: 2025/06/12 04:03:49 by sgomez-m          #+#    #+#             */
+/*   Updated: 2025/06/12 04:04:08 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_printf.h"
 
-/*
- ** ft_putstr_pf - Prints a string of characters 
- **function depends on the string that receive by parameter
- **
- **@str:   The string to prints
- **@lcount:The amount of printing characters
- **
- **return the count value or \"(null)\" if str is null
- ** 
- */
-
-int	ft_putstr_pf(char *str)
+int	ft_putdir_pf(void *pointer)
 {
-	int	count;
+	uintptr_t	ptr;
+	char		*str;
+	int			count;
 
-	if (!str)
-		str = "(null)";
+	ptr = (uintptr_t) pointer;
 	count = 0;
+	if (!ptr)
+		return (write(1, "(nil)", 5));
+	str = ft_utoa(ptr, "0123456789abcdef");
+	if (!str)
+		return (0);
+	write(1, "0x", 2);
 	while (str[count])
 		count++;
 	write(1, str, count);
+	count += 2;
+	free(str);
 	return (count);
 }

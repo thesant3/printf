@@ -13,30 +13,30 @@
 #include "lib_printf.h"
 
 /*
- * ft_handle_format - Parses a format specifier and dispatches the correct printing 
- * function depending on the parameter's data type.
- *
- * @c:	 The format specifier
- * @len: The amount of characters to print
- * 
+ **ft_handle_format - Parses a format specifier and dispatches the correct
+ **printing function depending on the parameter's data type.
+ **
+ **@c:	 The format specifier
+ **@args: The variadic parameters 
+ ** 
  */
 
-int	ft_handle_format(char *c)
+int	ft_handle_format(char *c, va_list args)
 {
 	if (*c == 'c')
-		return ft_putchar_pf(va_arg(args, int));
+		return (ft_putchar_pf(va_arg(args, int)));
 	if (*c == '%')
-		return (write(1, "%", 1));
+		return (ft_putpercent_pf());
 	else if (*c == 's')
-		return ft_putstr_pf(va_arg(args, *char));
-	else if (*c == 'p')
-		return ft_putdir_pf(va_arg(args, *void));
+		return (ft_putstr_pf(va_arg(args, char *)));
 	else if (*c == 'd' || *c == 'i')
-		return ft_putnbr_pf(va_arg(args, int));
+		return (ft_putdecimal_pf(va_arg(args, int)));
 	else if (*c == 'u')
-		return ft_putnbr__pf(args, unsigned int);
+		return (ft_putdecimal_pf(va_arg(args, unsigned int)));
+	else if (*c == 'p')
+		return (ft_putdir_pf(va_arg(args, void *)));
 	else if (*c == 'x' || *c == 'X')
-		return ft_puthex_pf(va_args(args, unsigned int, specifier));
+		return (ft_puthex_pf(va_arg(args, unsigned long), *c));
 	else
-		return (0);	
+		return (0);
 }

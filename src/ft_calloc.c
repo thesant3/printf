@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 19:58:05 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/06 20:13:57 by sgomez-m         ###   ########.fr       */
+/*   Created: 2025/05/09 18:12:57 by sgomez-m          #+#    #+#             */
+/*   Updated: 2025/05/10 17:29:18 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_printf.h"
 
-int	ft_printf(char const *str, ...)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*ptr;
-	va_list	args;
-	int		count;
+	void	*ptr;
 
-	va_start(args, str);
-	count = 0;
-	ptr = (char *)str;
-	while (*ptr)
-	{
-		if (*ptr == '%' && (ptr + 1))
-			count += ft_handle_format((ptr++), args);
-		else
-		{
-			count += write(1, ptr, 1);
-		}
-	}
-	va_end(args);
-	return (count);
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_memset(ptr, 0, (nmemb * size));
+	return (ptr);
 }

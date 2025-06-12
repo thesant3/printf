@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 19:58:05 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/06 20:13:57 by sgomez-m         ###   ########.fr       */
+/*   Created: 2025/04/24 20:15:53 by sgomez-m          #+#    #+#             */
+/*   Updated: 2025/05/10 22:45:12 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_printf.h"
 
-int	ft_printf(char const *str, ...)
+size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
-	char	*ptr;
-	va_list	args;
-	int		count;
+	unsigned int	len;
+	unsigned int	i;
 
-	va_start(args, str);
-	count = 0;
-	ptr = (char *)str;
-	while (*ptr)
+	len = 0;
+	i = 0;
+	while (src[len] != '\0')
 	{
-		if (*ptr == '%' && (ptr + 1))
-			count += ft_handle_format((ptr++), args);
-		else
-		{
-			count += write(1, ptr, 1);
-		}
+		len++;
 	}
-	va_end(args);
-	return (count);
+	if (size == 0)
+		return (len);
+	while ((src[i] != '\0') && (i < size - 1))
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (len);
 }

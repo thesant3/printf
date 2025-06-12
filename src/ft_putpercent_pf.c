@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   ft_putpercent_pf.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sgomez-m <sgomez-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 23:53:06 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/06 19:27:47 by sgomez-m         ###   ########.fr       */
+/*   Created: 2025/06/08 02:27:29 by sgomez-m          #+#    #+#             */
+/*   Updated: 2025/06/08 02:28:28 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- **ft_putchar - Prints a character receive by parameter
- ** 
- **@c: The printting character
- **
- */
-
 #include "lib_printf.h"
-
-int	ft_putchar_pf(char c)
+/**
+ **Prints the percent symbol
+ */
+int	ft_putpercent_pf(void)
 {
-	return (write(1, &c, 1));
+	return (write(1, "%", 1));
 }

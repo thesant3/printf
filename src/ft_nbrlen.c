@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sgomez-m <sgomez-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 19:58:05 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/06 20:13:57 by sgomez-m         ###   ########.fr       */
+/*   Created: 2025/06/11 22:39:50 by sgomez-m          #+#    #+#             */
+/*   Updated: 2025/06/11 22:56:51 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_printf.h"
 
-int	ft_printf(char const *str, ...)
+int	ft_nbrlen(unsigned long n, int base_len)
 {
-	char	*ptr;
-	va_list	args;
-	int		count;
+	int	count;
 
-	va_start(args, str);
-	count = 0;
-	ptr = (char *)str;
-	while (*ptr)
+	count = 1;
+	while (n >= (unsigned long)base_len)
 	{
-		if (*ptr == '%' && (ptr + 1))
-			count += ft_handle_format((ptr++), args);
-		else
-		{
-			count += write(1, ptr, 1);
-		}
+		n /= base_len;
+		count++;
 	}
-	va_end(args);
 	return (count);
 }

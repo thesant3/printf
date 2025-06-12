@@ -10,12 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-
 #library file's name
-NAME = $(BIN_DIR)libftprintf.a
+NAME = lib_printf.a
 
 #dir for .h files
-INC_DIR =./inc
+#INC_DIR =./inc
 #dir for .o files
 OBJ_DIR = ./obj
 #dir for .c files
@@ -25,13 +24,13 @@ SRC_DIR = ./src
 
 #compiler and flags
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -I$(INC_DIR)
+CFLAGS = -Wall -Werror -Wextra -I./
 
 #Make the static library 
 AR = ar rcs
 
 #Delete files
-RM = rm -f
+RM = rm -rf
 
 SRC = $(wildcard $(SRC_DIR)/*.c)
 
@@ -56,7 +55,7 @@ clean:
 	$(RM) $(OBJ)
 
 fclean : clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(OBJ_DIR)
 
 re : fclean all
 

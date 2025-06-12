@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 19:58:05 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/06 20:13:57 by sgomez-m         ###   ########.fr       */
+/*   Created: 2025/04/24 19:52:29 by sgomez-m          #+#    #+#             */
+/*   Updated: 2025/05/07 22:15:43 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_printf.h"
 
-int	ft_printf(char const *str, ...)
+size_t	ft_strlen(const char *str)
 {
-	char	*ptr;
-	va_list	args;
-	int		count;
+	size_t	i;
 
-	va_start(args, str);
-	count = 0;
-	ptr = (char *)str;
-	while (*ptr)
-	{
-		if (*ptr == '%' && (ptr + 1))
-			count += ft_handle_format((ptr++), args);
-		else
-		{
-			count += write(1, ptr, 1);
-		}
-	}
-	va_end(args);
-	return (count);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

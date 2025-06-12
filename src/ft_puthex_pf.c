@@ -10,21 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ ** ft_puthex-Transform and prints a integer to a hexadecimal number. 
+ ** The specifer reciven by parameter determines the lower or upper case.
+ ** @nbr: Number to transform in hexadecimal base.
+ ** @cs: specifer thats determines upper or lower case.
+ ** Returns the amount of characters printing of the hex number.
+ ** In case of fail returns 0.
+ */
 #include "lib_printf.h"
 
-void	ft_puthex_pf(va_args(args, int), &len, char cs)
+int	ft_puthex_pf(unsigned long nbr, char cs)
 {
-	char lower[] = "0123456789abcdef";
-	//char upper[] = "0123456789ABCDEF";
-	while ()
-	{	
-		if (cs == 'x')
-		{
-		
-		}
-		else if (cs == 'X')
-		{
-	
-		}
-	}
+	char	*lower;
+	char	*upper;
+	char	*hex;
+	int		count;
+
+	lower = "0123456789abcdef";
+	upper = "0123456789ABCDEF";
+	if (cs == 'X')
+		hex = ft_utoa(nbr, upper);
+	hex = ft_utoa(nbr, lower);
+	if (!hex)
+		return (0);
+	count = ft_nbrlen(nbr, 16);
+	write(1, hex, count);
+	free(hex);
+	return (count);
 }

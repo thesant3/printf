@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_pf.c                                     :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 00:02:11 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/04 00:44:38 by sgomez-m         ###   ########.fr       */
+/*   Created: 2025/04/29 21:28:52 by sgomez-m          #+#    #+#             */
+/*   Updated: 2025/05/06 15:10:04 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf"
+#include "lib_printf.h"
 
-void	ft_putnbr_pf(int n, int *len)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	long	nbr;
-	int	sing;
+	unsigned char	*p;
 
-	nbr = n;
-	if (nbr < 0)
+	p = (unsigned char *)s;
+	while (n--)
 	{
-		nbr *= -1;
-		write(1, '-', 1);
+		*p++ = (unsigned char) c;
 	}
-	if (nbr >= 10 )
-	{
-		ft_putnbr((nbr / 10), *len++);
-	}
-	ft_putchar_pf(((nbr % 10) + '0'), *len);
+	return (s);
 }
