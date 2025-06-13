@@ -6,7 +6,7 @@
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 20:14:23 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/12 22:42:24 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/14 00:28:02 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_putdecimal_pf(long d);
 int	ft_nbrlen(unsigned long n, int base_len);
 int	ft_putdir_pf(void *pointer);
 int	ft_puthex_pf(unsigned long nbr, char cs);
-char	*ft_itoa(int n);
+char	*ft_itoa(long n);
 char	*ft_utoa(unsigned long n, const char *base);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);

@@ -6,13 +6,13 @@
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 18:24:44 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/12 22:16:55 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/14 00:02:02 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_num_len(int n, char **ptr)
+static int	ft_num_len(long n, char **ptr)
 {
 	long	n2;
 	int		len;
@@ -33,7 +33,7 @@ static int	ft_num_len(int n, char **ptr)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long n)
 {
 	char	*str;
 	long	num;

@@ -6,13 +6,12 @@
 #    By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/02 19:45:08 by sgomez-m          #+#    #+#              #
-#    Updated: 2025/06/12 22:05:11 by sgomez-m         ###   ########.fr        #
+#    Updated: 2025/06/13 22:58:29 by sgomez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #library file's name
 NAME = libftprintf.a
-
 #dir for .h files
 #INC_DIR =./inc
 #dir for .o files
