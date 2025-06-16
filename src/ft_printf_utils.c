@@ -6,7 +6,7 @@
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 23:39:23 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/14 00:30:53 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/17 00:31:49 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_handle_format(char *c, va_list args)
 	else if (*c == 'p')
 		return (ft_putdir_pf(va_arg(args, void *)));
 	else if (*c == 'x' || *c == 'X')
-		return (ft_puthex_pf(va_arg(args, unsigned long), *c));
+		return (ft_puthex_pf(va_arg(args, unsigned int), *c));
 	else
 		return (0);
 }

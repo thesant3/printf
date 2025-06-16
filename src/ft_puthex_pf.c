@@ -6,7 +6,7 @@
 /*   By: sgomez-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:52:11 by sgomez-m          #+#    #+#             */
-/*   Updated: 2025/06/13 22:39:09 by sgomez-m         ###   ########.fr       */
+/*   Updated: 2025/06/17 00:36:37 by sgomez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  */
 #include "ft_printf.h"
 
-int	ft_puthex_pf(unsigned long nbr, char cs)
+int	ft_puthex_pf(long long nbr, char cs)
 {
 	char	*lower;
 	char	*upper;
@@ -29,12 +29,15 @@ int	ft_puthex_pf(unsigned long nbr, char cs)
 
 	lower = "0123456789abcdef";
 	upper = "0123456789ABCDEF";
+	count = 0;
 	if (cs == 'X')
 		hex = ft_utoa(nbr, upper);
-	hex = ft_utoa(nbr, lower);
+	else
+		hex = ft_utoa(nbr, lower);
 	if (!hex)
 		return (0);
-	count = ft_nbrlen(nbr, 16);
+	while (hex[count])
+		count++;
 	write(1, hex, count);
 	free(hex);
 	return (count);
